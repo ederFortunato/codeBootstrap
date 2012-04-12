@@ -1,0 +1,1 @@
+Hi, You are out. <?php echo anchor('/auth/login/', 'come in'); ?>
