@@ -43,7 +43,7 @@
       <? foreach($listHead as $key => $value){ ?>
         <th width="<?=$value['width']?>" ><?=$value['title']?></th>
       <? } ?>
-        <th width="130" class="center">Ações</th>
+        <th class="center">Ações</th>
     </tr>
   </thead>
 
@@ -87,22 +87,22 @@
         }else{
           $td = $val;
         }
-
+        
         echo '<td>'.$td.'</td>';
       }
     ?>   
 
-      <td>
+      <td width="<?=(($showOnlyViewButton)?50:0)+(($showEditButton)?65:0)+(($showRemoveButton)?65:0)?>">
 
-        <? if($showOnlyViewButton == true){ ?>
+        <? if($showOnlyViewButton){ ?>
           <a class="btn btn-info btn-mini" href="<?=site_url($linkBase.'/view'.'/'.$valueList->$idRecordSet);?>"><i class="icon-eye-open icon-white"></i> Ver</a>          
         <? } ?>
 
-        <? if($showEditButton == true){ ?>      
+        <? if($showEditButton){ ?>      
           <a class="btn btn-info btn-mini" href="<?=site_url($linkBase.'/edit'.'/'.$valueList->$idRecordSet);?>"><i class="icon-edit icon-white"></i> Editar</a>
         <? } ?>
 
-        <? if($showRemoveButton == true){ ?>
+        <? if($showRemoveButton){ ?>
           <a class="btn btn-danger btn-mini" data-toggle="modal" data-confirm-id="<?=$valueList->$idRecordSet?>" href="#ModalConfirmRemove" ><i class="icon-trash icon-white"></i> Deletar</a>
         <? } ?>
 
@@ -115,6 +115,13 @@
   </tbody>
 
 </table>
+
+<?
+  if(count($list) == 0){
+    echo '<div class="alert center"><strong>Nenhum registro encontrado</strong></div>';
+  }
+?>
+
 
 <div class="row">
     <? if($perPage < count($list)){ ?>
