@@ -5,6 +5,7 @@ $login = array(
   'value' => set_value('login'),
   'type'  => 'text',
   'label' =>  ($this->config->item('use_username', 'tank_auth'))?'Email or login':'Email',
+  'required' => 'true',
   'errors'=> isset($errors['login'])?$errors['login']:'' . form_error('login')
 );
 

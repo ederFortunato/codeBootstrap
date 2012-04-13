@@ -3,8 +3,9 @@
 $email = array(
   'id'  => 'email',
   'value' => set_value('email'),
-  'type'  => 'text',
+  'type'  => 'email',
   'label' => 'Email Address',
+  'required' => 'true',  
   'errors' => isset($errors['email'])?$errors['email']:'' . form_error('email')
 );
   

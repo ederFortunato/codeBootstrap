@@ -5,14 +5,16 @@ $password = array(
   'value' => set_value('password'),
   'type'  => 'password',
   'label' => 'Password',
+  'required' => 'true',  
   'errors'=> isset($errors['password'])?$errors['password']:'' . form_error('password')
 );
 
 $email = array(
   'id'    => 'email',
   'value' => set_value('email'),
-  'type'  => 'text',
+  'type'  => 'email',
   'label' => 'New email address',
+  'required' => 'true',
   'errors'=> isset($errors['email'])?$errors['email']:'' . form_error('email')
 );
 

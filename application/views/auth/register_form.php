@@ -5,14 +5,16 @@ $username = array(
   'value' => set_value('username'),
   'type'  => 'text',
   'label' => 'User Name',
+  'required' => 'true',
   'errors'=> isset($errors['username'])?$errors['username']:'' . form_error('username')
 );
 
 $email = array(
   'id'  => 'email',
   'value' => set_value('email'),
-  'type'  => 'text',
+  'type'  => 'email',
   'label' => 'Email Address',
+  'required' => 'true',
   'errors' => isset($errors['email'])?$errors['email']:'' . form_error('email')
 );
 
@@ -21,6 +23,7 @@ $password = array(
   'value' => set_value('password'),
   'type'  => 'password',
   'label' => 'Password',
+  'required' => 'true',
   'errors' => isset($errors['password'])?$errors['password']:'' . form_error('password')
 );
 
@@ -29,6 +32,7 @@ $confirm_password = array(
   'value' => set_value('confirm_password'),
   'type'  => 'password',
   'label' => 'Confirm Password',
+  'required' => 'true',
   'errors' => isset($errors['confirm_password'])?$errors['confirm_password']:'' . form_error('confirm_password')
 );
 

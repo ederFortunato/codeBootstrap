@@ -6,6 +6,7 @@ $new_password = array(
   'value' => '',
   'type'  => 'password',
   'label' => 'New Password',
+  'required' => 'true',  
   'errors' => isset($errors['new_password'])?$errors['new_password']:'' . form_error('new_password')
 );
 
@@ -15,6 +16,7 @@ $confirm_new_password = array(
   'value' => '',
   'type'  => 'password',
   'label' => 'Confirm New Password',
+  'required' => 'true',  
   'errors' => isset($errors['confirm_new_password'])?$errors['confirm_new_password']:'' . form_error('confirm_new_password')
 );
   

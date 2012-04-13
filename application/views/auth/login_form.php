@@ -13,6 +13,7 @@ $login = array(
   'label' => $login_label,
   'value' => set_value('login'),
   'type'  => 'text',
+  'required' => 'true',
   'errors' => isset($errors['login'])?$errors['login']:'' . form_error('login')
 );
 
@@ -21,6 +22,7 @@ $password = array(
   'label' => 'Password',
   'value' => set_value('password'),
   'type'  => 'password',
+  'required' => 'true',
   'errors' => isset($errors['password'])?$errors['password']:'' . form_error('password')
 );
 
