@@ -18,8 +18,6 @@ class Permissions extends MY_RestrictController {
 
 	public function index() { 
 
-		$this->setFeedBack();
-
 		$data = $this->permModel->getAllPermissions();
 
 		$listHead =  array(

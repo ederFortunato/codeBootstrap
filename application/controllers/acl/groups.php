@@ -20,8 +20,6 @@ class Groups extends MY_RestrictController {
 
 	public function index() { 		
 
-		$this->setFeedBack();
-
 		$data = $this->groupModel->getAllGroups();
 
 		$listHead =  array(

@@ -18,18 +18,14 @@ class MY_Controller extends CI_Controller {
 	/**
 	 * Construtor
 	 */
-	public function __construct($layoutFile = null){
+	public function __construct(){
 		parent::__construct();
-
-		if(!is_null($layoutFile)){
-			$this->layoutFile = $layoutFile;
-		}
 
 		$this->assign('BASE_URL', base_url() );
 
 		$this->load->library('session');
  
-
+		$this->setFeedBack();
 
 	}
  
@@ -76,7 +72,7 @@ class MY_Controller extends CI_Controller {
 
 
 	
-	public function setFeedBack() {
+	protected function setFeedBack() {
 
 		$msg  = $this->session->flashdata('feedbackMsg');
 		$type = $this->session->flashdata('feedbackType');

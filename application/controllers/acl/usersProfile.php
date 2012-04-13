@@ -19,8 +19,6 @@ class UsersProfile extends MY_RestrictController {
 
 	public function index() { 
 
-		$this->setFeedBack();
-
         $filters = $this->getAllSearchParans();
         
 		$data = $this->userModel->getAllUsers($filters);       
@@ -81,7 +79,7 @@ class UsersProfile extends MY_RestrictController {
             ),
             'email' => array(
                 'label' => 'Email Address',
-                'type'  => 'text',
+                'type'  => 'email',
                 'required' => 'true'
             ),
             
