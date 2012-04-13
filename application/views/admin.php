@@ -1,1 +1,1 @@
-Hi you are in, <?=$title?>
+<h1>Hi you are in.</h1>

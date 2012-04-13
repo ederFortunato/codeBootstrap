@@ -1,5 +1,10 @@
 body {
   padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+  background-color: #F5F5F5 !important;
+}
+.well{
+	background-color: #FFFFFF !important;
+	border: 1px solid #EBEBEB !important;
 }
 
 /* General styles */
@@ -9,7 +14,12 @@ body {
 
 
 /* Menu */
-.nav-child{
+#menuPermissions{
+	padding: 0px !important;
+}
+#menuPermissions .nav-child{
 	display: none;
 }
-
+#menuPermissions .nav-child a{
+	padding-left: 35px;
+}

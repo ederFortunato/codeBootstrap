@@ -11,16 +11,30 @@ $(function () {
 	// Menu of links
 	var menuLinks = $('#menuPermissions');
 
-	menuLinks.find('li.nav-child').hide();
-	menuLinks.find('li.nav-child.active').show();
-	menuLinks.find('li.nav-child.active').nextUntil('.nav-header', '.nav-child').show();
-	menuLinks.find('li.nav-child.active').prevUntil('.nav-header', '.nav-child').show();
+
+
+	function toggleMenu(linkHeader, time){
+		linkHeader.find('i').toggleClass('icon-plus');
+		linkHeader.find('i').toggleClass('icon-minus');
+		if(time == undefined || time == 0)
+			linkHeader.nextUntil('.nav-header', '.nav-child').show();	
+		else
+			linkHeader.nextUntil('.nav-header', '.nav-child').toggle(time);
+	} 	
+
 	
+
 	menuLinks.find('li.nav-header')
 		.css('cursor', 'pointer')
 		.click(function(e){
-			$(this).nextUntil('.nav-header', '.nav-child').toggle(400);
+			toggleMenu($(this), 400);
 		});
+	
+	toggleMenu(
+				menuLinks.find('li.nav-child.active')
+					.prevAll('.nav-header')
+					.eq(0)
+				, 0);
 	
 
 

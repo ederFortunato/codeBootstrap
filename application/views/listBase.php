@@ -2,20 +2,24 @@
 
   <h2><?=$title?></h2>
 
+  <!-- Alert Messenger -->
   <?php if(isset($feedback)){ ?>
     <div class="alertNoty hide" data-alert-type="<?=$feedback?>">
       <?=$msg;?>
     </div>
   <?php } ?>
+  <!--/ Alert Messenger -->
 
+  <!-- ADD button -->
   <div class="row">
-    <div class="offset7">
-      <?php echo anchor($linkBase.'/add', '<i class="icon-plus icon-white"></i> Criar Novo', 'class="btn-large btn-primary btn "'); ?>
-    </div>
+      <?php echo anchor($linkBase.'/add', '<i class="icon-plus icon-white"></i> Criar Novo', 'class="btn-large btn-primary btn pull-right"'); ?>
   </div>
+  <!--/ ADD button -->
 
+  <!-- search row -->
   <? if(isset($searchInfo)){ ?>
     <div class="row">
+      <hr>
       <div class="span9">
         <form class="form-inline" action="<?=$_SERVER['REQUEST_URI']?>" method="get" >
           <?
@@ -27,8 +31,8 @@
           <button type="submit" class="btn"><i class="icon-search"></i> Buscar</button>
         </form> 
       </div>
-    </div><!--/.row -->
-  <? } ?>
+    </div> 
+  <? } ?><!--/ search row -->
 
 </div><!--/.page-header -->
 
@@ -39,7 +43,7 @@
       <? foreach($listHead as $key => $value){ ?>
         <th width="<?=$value['width']?>" ><?=$value['title']?></th>
       <? } ?>
-        <th width="170" class="center">Ações</th>
+        <th width="130" class="center">Ações</th>
     </tr>
   </thead>
 
@@ -91,15 +95,15 @@
       <td>
 
         <? if($showOnlyViewButton == true){ ?>
-          <a class="btn btn-info" href="<?=site_url($linkBase.'/view'.'/'.$valueList->$idRecordSet);?>"><i class="icon-eye-open icon-white"></i> Ver</a>          
+          <a class="btn btn-info btn-mini" href="<?=site_url($linkBase.'/view'.'/'.$valueList->$idRecordSet);?>"><i class="icon-eye-open icon-white"></i> Ver</a>          
         <? } ?>
 
         <? if($showEditButton == true){ ?>      
-          <a class="btn btn-info" href="<?=site_url($linkBase.'/edit'.'/'.$valueList->$idRecordSet);?>"><i class="icon-edit icon-white"></i> Editar</a>
+          <a class="btn btn-info btn-mini" href="<?=site_url($linkBase.'/edit'.'/'.$valueList->$idRecordSet);?>"><i class="icon-edit icon-white"></i> Editar</a>
         <? } ?>
 
         <? if($showRemoveButton == true){ ?>
-          <a data-toggle="modal" data-confirm-id="<?=$valueList->$idRecordSet?>" href="#ModalConfirmRemove" class="btn btn-danger"><i class="icon-trash icon-white"></i> Deletar</a>
+          <a class="btn btn-danger btn-mini" data-toggle="modal" data-confirm-id="<?=$valueList->$idRecordSet?>" href="#ModalConfirmRemove" ><i class="icon-trash icon-white"></i> Deletar</a>
         <? } ?>
 
       </td>
@@ -112,17 +116,14 @@
 
 </table>
 
-<div class="row"><!-- Pagging -->
-  <div class="span7"> 
-    <?
-      echo generatePagination(count($list), $perPage, $startPage, site_url($linkBase), $searchParans);
-    ?> 
-  </div>
-
-  <div class="span2">
+<div class="row">
     <? if($perPage < count($list)){ ?>
-      <span class="label label-info">Exibindo <?=(1 + $countPage)?>-<?=($endPage)?> de <?=count($list)?></span>
+      <span class="label label-info pull-right">Exibindo <?=(1 + $countPage)?>-<?=($endPage)?> de <?=count($list)?></span>
     <? } ?>
+</div>
+
+<div class="row">
+  <div class="span8"> <!-- Pagging -->
+    <? echo generatePagination(count($list), $perPage, $startPage, site_url($linkBase), $searchParans); ?> 
   </div>
- 
-</div> <!-- End Pagging -->
+</div><!-- End Pagging -->

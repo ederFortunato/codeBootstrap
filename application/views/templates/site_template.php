@@ -8,10 +8,10 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style_site.css" rel="stylesheet">
     <link href="assets/css/bootstrap/bootstrap.min.css" rel="stylesheet">   
     <link href="assets/css/bootstrap/bootstrap-responsive.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="<?=site_url('favicon.ico')?>">
     <!--[if lt IE 9]>
       <script src="assets/js/html5Shiv.js"></script>
     <![endif]-->

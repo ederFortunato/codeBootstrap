@@ -13,7 +13,7 @@
     <link href="assets/css/bootstrap/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="assets/css/noty/jquery.noty.css" rel="stylesheet" />
     <link href="assets/css/noty/noty_theme_twitter.css" rel="stylesheet" />
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="<?=site_url('favicon.ico')?>">
     <!--[if lt IE 9]>
       <script src="assets/js/html5Shiv.js"></script>
     <![endif]-->
@@ -60,7 +60,7 @@
             if(isset($listMenu)){
               foreach ($listMenu as $keyParent => $rowParent) {
                 if($rowParent->parentID == 0){
-                  echo '<li class="nav-header">'.$rowParent->permName.'</li>';
+                  echo '<li class="nav-header"><i class="icon-minus"></i> '.$rowParent->permName.'</li>';
                   foreach ($listMenu as $keyChild => $rowChild) {
                     if($rowChild->parentID == $rowParent->permID){
                       echo '<li class="nav-child '.isActiveLink($rowChild->permKey).'">';
@@ -76,8 +76,10 @@
           </div><!--/.well -->
         </div><!--/span-->
 
-        <div class="span9">         
+        <div class="span9">
+          <div class="well">         
             <? include(BASEPATH.'../'.VIEWPATH . $content) ?>
+          </div>
         </div><!--/span-->
       </div><!--/row-->
 
