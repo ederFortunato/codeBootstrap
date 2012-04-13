@@ -77,7 +77,7 @@
         </div><!--/span-->
 
         <div class="span9">
-          <div class="well">         
+          <div class="well internalContainer">         
             <? include(BASEPATH.'../'.VIEWPATH . $content) ?>
           </div>
         </div><!--/span-->
