@@ -11,11 +11,11 @@ $email = array(
   
 ?>
 
-<form class="form-horizontal" action="<?=site_url($this->uri->uri_string())?>" method="post" accept-charset="utf-8" >
+<form class="form-horizontal" action="<?php echo site_url($this->uri->uri_string())?>" method="post" accept-charset="utf-8" >
   <fieldset>
     <legend>Change Password</legend>
 	      
-    <?=htmlMountInputForm($email)?>
+    <?php echo htmlMountInputForm($email)?>
 
     <div class="control-group">
       <div class="controls">

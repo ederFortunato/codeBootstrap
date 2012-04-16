@@ -10,11 +10,11 @@ $password = array(
 
 ?>
 
-<form class="form-horizontal" action="<?=site_url($this->uri->uri_string())?>" method="post" accept-charset="utf-8" >
+<form class="form-horizontal" action="<?php echo site_url($this->uri->uri_string())?>" method="post" accept-charset="utf-8" >
   <fieldset>
     <legend>Unregister</legend>
       
-    <?=htmlMountInputForm($password)?>
+    <?php echo htmlMountInputForm($password)?>
 
     <div class="control-group">
       <div class="controls">

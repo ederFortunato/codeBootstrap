@@ -28,13 +28,13 @@ $password = array(
 
 ?>
 
-<form class="form-horizontal" action="<?=site_url($this->uri->uri_string())?>" method="post" accept-charset="utf-8" >
+<form class="form-horizontal" action="<?php echo site_url($this->uri->uri_string())?>" method="post" accept-charset="utf-8" >
   <fieldset>
     <legend>Login Form</legend>
 
-    <?=htmlMountInputForm($login)?>
+    <?php echo htmlMountInputForm($login)?>
 
-    <?=htmlMountInputForm($password)?>
+    <?php echo htmlMountInputForm($password)?>
 
     <div class="control-group">
       <div class="controls"><?php echo anchor('/auth/forgot_password/', 'Forgot password?'); ?></div>
@@ -87,7 +87,7 @@ $password = array(
     <div class="control-group">
       <div class="controls">                      
         <label class="checkbox inline" for="remember">
-          <input type="checkbox" name="remember" value="1" id="remember" checked="<?=set_value('remember')?>" class="input-xlarge" />
+          <input type="checkbox" name="remember" value="1" id="remember" checked="<?php echo set_value('remember')?>" class="input-xlarge" />
           Remember me
         </label>
       </div>

@@ -1,4 +1,4 @@
-<?
+<?php
 
 $isEdit = (isset($recordSet));
 
@@ -7,11 +7,11 @@ $isEdit = (isset($recordSet));
 <!-- Form -->
 <form  action="<?php echo site_url($linkBase.'/save'); ?>" method="post" class="form-horizontal" accept-charset="utf-8" >
     <fieldset>
-    <legend><?=$title?></legend>
+    <legend><?php echo $title?></legend>
 
-    <? if($isEdit){ ?>
-    <input type="hidden" name="<?=$idRecordSet?>" value="<?=$recordSet->$idRecordSet?>" class="hidden" />
-    <? } ?>
+    <?php if($isEdit){ ?>
+    <input type="hidden" name="<?php echo $idRecordSet?>" value="<?php echo $recordSet->$idRecordSet?>" class="hidden" />
+    <?php } ?>
 
     <?
       foreach($formInfo as $key => $field){

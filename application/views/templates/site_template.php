@@ -11,7 +11,7 @@
     <link href="assets/css/style_site.css" rel="stylesheet">
     <link href="assets/css/bootstrap/bootstrap.min.css" rel="stylesheet">   
     <link href="assets/css/bootstrap/bootstrap-responsive.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="<?=site_url('favicon.ico')?>">
+    <link rel="shortcut icon" href="<?php echo site_url('favicon.ico')?>">
     <!--[if lt IE 9]>
       <script src="assets/js/html5Shiv.js"></script>
     <![endif]-->
@@ -28,7 +28,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="<?=site_url()?>">Project</a>
+          <a class="brand" href="<?php echo site_url()?>">Project</a>
           <div class="nav-collapse">
             <ul class="nav">
               <li><?php echo anchor('/auth/Login/', 'Login'); ?></li>
@@ -42,7 +42,7 @@
     <div class="container">
       <div class="row">
         <div class="span9">
-          <? include(BASEPATH.'../'.VIEWPATH . $content) ?>
+          <?php include(BASEPATH.'../'.VIEWPATH . $content) ?>
         </div>
       </div>
     </div> <!-- /container -->

@@ -2,21 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Project | <?=$title?></title>
+    <title>Project | <?php echo $title?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
 
     <!-- Le styles -->    
-    <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/bootstrap/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="assets/css/noty/jquery.noty.css" rel="stylesheet" />
     <link href="assets/css/noty/noty_theme_twitter.css" rel="stylesheet" />
-    <link rel="shortcut icon" href="<?=site_url('favicon.ico')?>">
+    <link href="assets/css/style.css" rel="stylesheet">
     <!--[if lt IE 9]>
       <script src="assets/js/html5Shiv.js"></script>
     <![endif]-->
+    
+    <link rel="shortcut icon" href="<?php echo site_url('favicon.ico')?>">
+    
   </head>
 
   <body>
@@ -29,19 +31,19 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="<?=site_url('admin')?>">Project name</a>
+          <a class="brand" href="<?php echo site_url('admin')?>">Project name</a>
           <div class="nav-collapse">
             <p class="navbar-text pull-right">
               <?php echo anchor('/auth/logout/', 'logout'); ?>
             </p>
             <ul class="nav pull-right">
               <li class="dropdown">
-                <a data-toggle="dropdown" class="dropdown-toggle" href="#">Hi, <?=$USER_LOGIN_NAME?> <b class="caret"></b></a>
+                <a data-toggle="dropdown" class="dropdown-toggle" href="#">Hi, <?php echo $USER_LOGIN_NAME?> <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <li><?=anchor('/auth/change_email/', 'Change Email')?></li>
-                  <li><?=anchor('/auth/change_password/', 'Change Password')?></li>
+                  <li><?php echo anchor('/auth/change_email/', 'Change Email')?></li>
+                  <li><?php echo anchor('/auth/change_password/', 'Change Password')?></li>
                   <li class="divider"></li>
-                  <li><?=anchor('/auth/unregister/', 'Unregister')?></li>
+                  <li><?php echo anchor('/auth/unregister/', 'Unregister')?></li>
                 </ul>
               </li>
             </ul>
@@ -56,7 +58,7 @@
 
           <div class="well sidebar-nav">
             <ul id="menuPermissions" class="nav nav-list ">
-            <?
+            <?php
             if(isset($listMenu)){
               foreach ($listMenu as $keyParent => $rowParent) {
                 if($rowParent->parentID == 0){
@@ -78,15 +80,17 @@
 
         <div class="span9">
           <div class="well internalContainer">         
-            <? include(BASEPATH.'../'.VIEWPATH . $content) ?>
+            <?php include(BASEPATH.'../'.VIEWPATH . $content) ?>
           </div>
         </div><!--/span-->
       </div><!--/row-->
-
+    </div><!--/container-->
       <hr>
 
       <footer>
-        <p>&copy; Company 2012</p>
+        <div class="container">
+          <p>&copy; Company 2012</p>
+        </div>
       </footer>
  
       <!-- sample modal content -->
@@ -106,7 +110,11 @@
 
 
     <!-- JavaScript at the bottom for fast page loading -->
-
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="assets/js/jquery/jquery.js"><\/script>')</script>
+    
+    <!-- scripts concatenated and minified via build script -->    
+ 
     <!-- scripts concatenated and minified via build script -->
     <script src="assets/js/jquery/jquery.js"></script>
     <script src="assets/js/jquery/jquery.noty.js"></script>

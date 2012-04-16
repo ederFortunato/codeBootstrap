@@ -1,11 +1,11 @@
 <div class="page-header">
 
-  <h2><?=$title?></h2>
+  <h2><?php echo $title?></h2>
 
   <!-- Alert Messenger -->
   <?php if(isset($feedback)){ ?>
-    <div class="alertNoty hide" data-alert-type="<?=$feedback?>">
-      <?=$msg;?>
+    <div class="alertNoty hide" data-alert-type="<?php echo $feedback?>">
+      <?php echo $msg;?>
     </div>
   <?php } ?>
   <!--/ Alert Messenger -->
@@ -17,12 +17,12 @@
   <!--/ ADD button -->
 
   <!-- search row -->
-  <? if(isset($searchInfo)){ ?>
+  <?php if(isset($searchInfo)){ ?>
     <div class="row">
       <hr>
       <div class="span9">
-        <form class="form-inline" action="<?=$_SERVER['REQUEST_URI']?>" method="get" >
-          <?
+        <form class="form-inline" action="<?php echo $_SERVER['REQUEST_URI']?>" method="get" >
+          <?php
             foreach ($searchInfo as $keySearch => $valueSearch) {
               echo ' <label class="control-label" for="'.$keySearch.'">'.$valueSearch['title'].': </label> ';
               echo ' <input class="span2" type="'.$valueSearch['value'].'"id="'.$keySearch.'" name="'.$keySearch.'" value="'.$valueSearch['value'].'">';  
@@ -32,7 +32,7 @@
         </form> 
       </div>
     </div> 
-  <? } ?><!--/ search row -->
+  <?php } ?><!--/ search row -->
 
 </div><!--/.page-header -->
 
@@ -40,16 +40,16 @@
 
   <thead>
     <tr>
-      <? foreach($listHead as $key => $value){ ?>
-        <th width="<?=$value['width']?>" ><?=$value['title']?></th>
-      <? } ?>
+      <?php foreach($listHead as $key => $value){ ?>
+        <th width="<?php echo $value['width']?>" ><?php echo $value['title']?></th>
+      <?php } ?>
         <th class="center">Ações</th>
     </tr>
   </thead>
 
   <tbody>
 
-  <?
+  <?php
     $startPage  = (isset($pageNumber))?$pageNumber:1;  
     $countPage  = ($startPage - 1) * $perPage;
     $endPage = (count($list) < ($perPage + $countPage))?count($list):($perPage + $countPage);
@@ -65,7 +65,7 @@
   ?>
 
     <tr>
-    <?
+    <?php
       foreach($listHead as $key => $value){
         $td = '';
 
@@ -92,25 +92,25 @@
       }
     ?>   
 
-      <td width="<?=(($showOnlyViewButton)?50:0)+(($showEditButton)?65:0)+(($showRemoveButton)?65:0)?>">
+      <td width="<?php echo (($showOnlyViewButton)?50:0)+(($showEditButton)?65:0)+(($showRemoveButton)?65:0)?>">
 
-        <? if($showOnlyViewButton){ ?>
-          <a class="btn btn-info btn-mini" href="<?=site_url($linkBase.'/view'.'/'.$valueList->$idRecordSet);?>"><i class="icon-eye-open icon-white"></i> Ver</a>          
-        <? } ?>
+        <?php if($showOnlyViewButton){ ?>
+          <a class="btn btn-info btn-mini" href="<?php echo site_url($linkBase.'/view'.'/'.$valueList->$idRecordSet);?>"><i class="icon-eye-open icon-white"></i> Ver</a>          
+        <?php } ?>
 
-        <? if($showEditButton){ ?>      
-          <a class="btn btn-info btn-mini" href="<?=site_url($linkBase.'/edit'.'/'.$valueList->$idRecordSet);?>"><i class="icon-edit icon-white"></i> Editar</a>
-        <? } ?>
+        <?php if($showEditButton){ ?>      
+          <a class="btn btn-info btn-mini" href="<?php echo site_url($linkBase.'/edit'.'/'.$valueList->$idRecordSet);?>"><i class="icon-edit icon-white"></i> Editar</a>
+        <?php } ?>
 
-        <? if($showRemoveButton){ ?>
-          <a class="btn btn-danger btn-mini" data-toggle="modal" data-confirm-id="<?=$valueList->$idRecordSet?>" href="#ModalConfirmRemove" ><i class="icon-trash icon-white"></i> Deletar</a>
-        <? } ?>
+        <?php if($showRemoveButton){ ?>
+          <a class="btn btn-danger btn-mini" data-toggle="modal" data-confirm-id="<?php echo $valueList->$idRecordSet?>" href="#ModalConfirmRemove" ><i class="icon-trash icon-white"></i> Deletar</a>
+        <?php } ?>
 
       </td>
 
     </tr>
 
-  <? } ?>
+  <?php } ?>
 
   </tbody>
 
@@ -124,13 +124,13 @@
 
 
 <div class="row">
-    <? if($perPage < count($list)){ ?>
-      <span class="label label-info pull-right">Exibindo <?=(1 + $countPage)?>-<?=($endPage)?> de <?=count($list)?></span>
-    <? } ?>
+    <?php if($perPage < count($list)){ ?>
+      <span class="label label-info pull-right">Exibindo <?php echo (1 + $countPage)?>-<?php echo ($endPage)?> de <?php echo count($list)?></span>
+    <?php } ?>
 </div>
 
 <div class="row">
   <div class="span8"> <!-- Pagging -->
-    <? echo generatePagination(count($list), $perPage, $startPage, site_url($linkBase), $searchParans); ?> 
+    <?php echo generatePagination(count($list), $perPage, $startPage, site_url($linkBase), $searchParans); ?> 
   </div>
 </div><!-- End Pagging -->

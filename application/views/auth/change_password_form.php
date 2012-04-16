@@ -31,15 +31,15 @@ $confirm_new_password = array(
 
 ?>
 
-<form class="form-horizontal" action="<?=site_url($this->uri->uri_string())?>" method="post" accept-charset="utf-8" >
+<form class="form-horizontal" action="<?php echo site_url($this->uri->uri_string())?>" method="post" accept-charset="utf-8" >
   <fieldset>
     <legend>Change Password</legend>
 
-    <?=htmlMountInputForm($old_password)?>
+    <?php echo htmlMountInputForm($old_password)?>
 
-    <?=htmlMountInputForm($new_password)?>
+    <?php echo htmlMountInputForm($new_password)?>
 
-    <?=htmlMountInputForm($confirm_new_password)?>
+    <?php echo htmlMountInputForm($confirm_new_password)?>
 
     <div class="control-group">
       <div class="controls">

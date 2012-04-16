@@ -38,7 +38,7 @@ $confirm_password = array(
 
 ?>
 
-<form class="form-horizontal" action="<?=site_url($this->uri->uri_string())?>" method="post" accept-charset="utf-8" >
+<form class="form-horizontal" action="<?php echo site_url($this->uri->uri_string())?>" method="post" accept-charset="utf-8" >
   <fieldset>
     <legend>Register</legend>
 	      
@@ -48,11 +48,11 @@ $confirm_password = array(
 
     <?php } ?>
     
-    <?=htmlMountInputForm($email)?>
+    <?php echo htmlMountInputForm($email)?>
 
-    <?=htmlMountInputForm($password)?>
+    <?php echo htmlMountInputForm($password)?>
 
-    <?=htmlMountInputForm($confirm_password)?>
+    <?php echo htmlMountInputForm($confirm_password)?>
 
     <?php if ($captcha_registration) { ?>
 
