@@ -1,5 +1,7 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
+include BASEPATH . '../application/core/MY_RestrictController.php';
+
 class Auth extends MY_Controller
 {
 	function __construct()
@@ -610,18 +612,21 @@ class Auth extends MY_Controller
 
 	function _display($_view, $_data)
 	{
+		
+
 		// so para garantir que a extensao sempre existirá
 		$_view = preg_replace('@\.php$@i', '', $_view) . '.php';
 
 		$idUser = $this->tank_auth->get_user_id();
 		$user = $this->userModel->getUser($idUser);
 
-		$_data['USER_LOGIN_ID']		= $idUser;
-		$_data['USER_LOGIN_NAME']	= $user[0]->nome; 
+		$ctrl = new MY_RestrictController();
+		
+		$userProfile = $ctrl->getInfoUserlogged();
 
-		$permsMenu = $this->AclModel->getPermsByUser($idUser);
-		$_data['listMenu']	= $permsMenu; 	
-
+		$_data['USER_LOGIN_ID']		= $userProfile['id'];
+		$_data['USER_LOGIN_NAME']	= $userProfile['name']; 
+		$_data['listMenu']			= $userProfile['menu']; 
 
 		$_data['content'] = $_view;
 		$this->load->view('templates/admin_template', $_data);

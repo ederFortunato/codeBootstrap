@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Banco de Dados: `acl_test2`
+-- Banco de Dados: `projectbase`
 --
 
 -- --------------------------------------------------------
@@ -61,6 +61,9 @@ CREATE TABLE IF NOT EXISTS `acl_group_permission` (
 --
 
 INSERT INTO `acl_group_permission` (`id`, `groupID`, `permID`, `value`, `addDate`) VALUES
+(168, 1, 65, 1, '2012-04-12 12:35:12'),
+(167, 1, 64, 1, '2012-04-12 12:35:12'),
+(166, 1, 63, 1, '2012-04-12 12:35:12'),
 (165, 1, 62, 1, '2012-04-12 12:35:12'),
 (164, 1, 59, 1, '2012-04-12 12:35:12'),
 (163, 1, 58, 1, '2012-04-12 12:35:12'),
@@ -119,7 +122,10 @@ INSERT INTO `acl_permissions` (`id`, `parentID`, `permKey`, `permName`, `isMenu`
 (57, 44, 'acl/groups/edit', 'Editar grupos', 0, 0),
 (58, 44, 'acl/groups/remove', 'Remover grupos', 0, 0),
 (59, 44, 'acl/groups/save', 'Função interna', 0, 0),
-(62, 0, 'home', 'home', 1, 0);
+(62, 0, 'home', 'home', 1, 0),
+(63, 0, 'auth/change_email', 'Change Email', 0, 0),
+(64, 0, 'auth/change_password', 'Change Password', 0, 0),
+(65, 0, 'auth/unregister', '  Unregister', 0, 0);
 
 -- --------------------------------------------------------
 

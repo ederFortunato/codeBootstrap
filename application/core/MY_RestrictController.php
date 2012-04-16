@@ -3,10 +3,12 @@
 
 class MY_RestrictController extends MY_Controller {
 
+	protected $numberPerPage = 10;
+
 	/**
 	 * Construtor
 	 */
-	public function __construct($layoutFile = null){
+	public function __construct(){
 		parent::__construct();
 
 		$this->layoutFile = 'templates/admin_template';
@@ -47,42 +49,48 @@ class MY_RestrictController extends MY_Controller {
 		}
 	}
 
-
-
 	private function _init(){
+		
+		$userProfile = $this->getInfoUserlogged();
 
-		$idUser = $this->tank_auth->get_user_id();
-		$user 	= $this->userModel->getUser($idUser);
+		$this->assign('USER_LOGIN_ID',  	$userProfile['id']);
+		$this->assign('USER_LOGIN_NAME',	$userProfile['name']); 
+		$this->assign('listMenu',			$userProfile['menu']); 
 
-		$this->assign('USER_LOGIN_ID',  	$idUser);
-		$this->assign('USER_LOGIN_NAME',	$user[0]->nome); 
-
-		$permsMenu = $this->AclModel->getPermsByUser($idUser);
-		$this->assign('listMenu',	$permsMenu); 
-
-		$this->assign('USER_LOGIN_NAME',	$user[0]->nome); 
-
-
+	
 		//list
 		$this->assign('showOnlyViewButton', FALSE);
  		$this->assign('showEditButton', TRUE);
  		$this->assign('showRemoveButton', TRUE);
 
-
  		$this->assign('searchParans', $this->getAllSearchParans());
 
-		//pagination
-		$perPage  = 10; 
+		//pagination	 
 		$init_page  = isset($_GET['page'])?$_GET['page']:1;
  		$this->assign('pageNumber', $init_page);
- 		$this->assign('perPage', $perPage);
+ 		$this->assign('perPage', $this->numberPerPage);
 
+	}
+
+	public function getInfoUserlogged(){
+		$data = array();
+
+		$idUser = $this->tank_auth->get_user_id();
+		$user 	= $this->userModel->getUser($idUser);
+		$permsMenu = $this->AclModel->getPermsByUser($idUser);
+		
+		$data['id']		 = $idUser;
+		$data['name']	 = $user[0]->nome; 
+		$data['menu']	 = $permsMenu; 
+
+		return $data;
 	}
 
 
 	protected function getSearchParam($t){
 		return isset($_GET[$t])?$_GET[$t]:'';
 	}
+
 	protected function getAllSearchParans(){
 		$g = $_GET;
 		unset($g['page']);		
