@@ -180,9 +180,9 @@ class UsersProfile extends MY_RestrictController {
 		$result = $this->userModel->removeUser($id);
 
         if($result == 1){
-            $this->redirectAndShowMsg('Usuário removido com sucesso', 'success', $this->linkBase);
+            $this->redirectAndShowMsg('User successfully removed', 'success', $this->linkBase);
         }else{
-            $this->redirectAndShowMsg('Erro ao remover Usuário', 'error', $this->linkBase);           
+            $this->redirectAndShowMsg('Error in operation, cannot remove this User', 'error', $this->linkBase);           
         }		 
 	}
 
@@ -195,12 +195,12 @@ class UsersProfile extends MY_RestrictController {
 
         if($result == 1){
             if(isset($_POST[$this->idRecordSet])){//is Edit?
-                $this->redirectAndShowMsg('Usuário alterado com sucesso', 'success', $this->linkBase);
+                $this->redirectAndShowMsg('User successfully edited', 'success', $this->linkBase);
             }else{
-                $this->redirectAndShowMsg('Usuário incluido com sucesso', 'success', $this->linkBase);
+                $this->redirectAndShowMsg('User successfully inserted', 'success', $this->linkBase);
             }
         }else{
-            $this->redirectAndShowMsg('Erro na operação, Tente novamente', 'error', $this->linkBase);           
+            $this->redirectAndShowMsg('Error in operation, try again', 'error', $this->linkBase);           
         }
     }   
 

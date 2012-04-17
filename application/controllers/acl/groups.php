@@ -117,9 +117,9 @@ class Groups extends MY_RestrictController {
 		$result = $this->groupModel->removeGroup($id);
 
 		if($result == 1){
-			$this->redirectAndShowMsg('Grupo removido com sucesso', 'success', $this->linkBase);
+			$this->redirectAndShowMsg('Group successfully removed', 'success', $this->linkBase);
 		}else{
-			$this->redirectAndShowMsg('Erro ao remover Grupo', 'error', $this->linkBase);			
+			$this->redirectAndShowMsg('Error in operation, cannot remove this Group', 'error', $this->linkBase);			
 		}
 	}
 
@@ -129,12 +129,12 @@ class Groups extends MY_RestrictController {
 		
 		if($result == 1){
 			if(isset($_POST[$this->idRecordSet])){//is Edit?
-				$this->redirectAndShowMsg('Grupo alterado com sucesso', 'success', $this->linkBase);
+				$this->redirectAndShowMsg('Group successfully edited', 'success', $this->linkBase);
 			}else{
-				$this->redirectAndShowMsg('Grupo incluido com sucesso', 'success', $this->linkBase);
+				$this->redirectAndShowMsg('Group successfully inserted', 'success', $this->linkBase);
 			}
 		}else{
-			$this->redirectAndShowMsg('Erro na operação, Tente novamente', 'error', $this->linkBase);			
+			$this->redirectAndShowMsg('Error in operation, try again', 'error', $this->linkBase);			
 		}
 	}	
 }

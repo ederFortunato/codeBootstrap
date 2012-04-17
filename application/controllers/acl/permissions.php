@@ -156,9 +156,9 @@ class Permissions extends MY_RestrictController {
 		$result = $this->permModel->removePermission($id);
 
         if($result == 1){
-            $this->redirectAndShowMsg('Permissão removido com sucesso', 'success', $this->linkBase);
+            $this->redirectAndShowMsg('Permission successfully removed', 'success', $this->linkBase);
         }else{
-            $this->redirectAndShowMsg('Erro ao remover Permissão', 'error', $this->linkBase);           
+            $this->redirectAndShowMsg('Error in operation, cannot remove this Permission', 'error', $this->linkBase);           
         }		 
 	}
 
@@ -168,12 +168,12 @@ class Permissions extends MY_RestrictController {
         
         if($result == 1){
             if(isset($_POST[$this->idRecordSet])){//is Edit?
-                $this->redirectAndShowMsg('Permissão alterada com sucesso', 'success', $this->linkBase);
+                $this->redirectAndShowMsg('Permission successfully edited', 'success', $this->linkBase);
             }else{
-                $this->redirectAndShowMsg('Permissão incluida com sucesso', 'success', $this->linkBase);
+                $this->redirectAndShowMsg('Permission successfully inserted', 'success', $this->linkBase);
             }
         }else{
-            $this->redirectAndShowMsg('Erro na operação, Tente novamente', 'error', $this->linkBase);           
+            $this->redirectAndShowMsg('Error in operation, try again', 'error', $this->linkBase);           
         }
     }   
  	
