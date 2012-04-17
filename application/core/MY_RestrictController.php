@@ -76,9 +76,9 @@ class MY_RestrictController extends MY_Controller {
 		$data = array();
 
 		$idUser = $this->tank_auth->get_user_id();
-		$user 	= $this->userModel->getUser($idUser);
+		$user 	= $this->userModel->getAllUsers(array('auth_id' => $idUser));
 		$permsMenu = $this->AclModel->getPermsByUser($idUser);
-		
+
 		$data['id']		 = $idUser;
 		$data['name']	 = $user[0]->nome; 
 		$data['menu']	 = $permsMenu; 

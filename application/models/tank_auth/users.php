@@ -22,6 +22,9 @@ class Users extends CI_Model
 		$ci =& get_instance();
 		$this->table_name			= $ci->config->item('db_table_prefix', 'tank_auth').$this->table_name;
 		$this->profile_table_name	= $this->profile_table_name;
+
+		$this->load->model('ACL_Model', 'AclModel');
+
 	}
 
 	/**
@@ -378,7 +381,12 @@ class Users extends CI_Model
 	private function create_profile($user_id)
 	{
 		$this->db->set('auth_id', $user_id);
-		return $this->db->insert($this->profile_table_name);
+
+		$id = $this->db->insert($this->profile_table_name);
+
+		$this->AclModel->setUserGroup($user_id, 2);//group basic
+
+		return $id;
 	}
 
 	/**
