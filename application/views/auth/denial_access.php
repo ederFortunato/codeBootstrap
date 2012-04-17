@@ -1,2 +1,2 @@
-<h1>Você não tem acesso aqui (<a href="javascript:history.back();">voltar</a>)</h1>
+<h1>You don't have permission (<a href="javascript:history.back();">voltar</a>)</h1>
 

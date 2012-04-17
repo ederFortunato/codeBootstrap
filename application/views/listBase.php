@@ -12,7 +12,7 @@
 
   <!-- ADD button -->
   <div class="row">
-      <?php echo anchor($linkBase.'/add', '<i class="icon-plus icon-white"></i> Criar Novo', 'class="btn-large btn-primary btn pull-right"'); ?>
+      <?php echo anchor($linkBase.'/add', '<i class="icon-plus icon-white"></i> Create new', 'class="btn-large btn-primary btn pull-right"'); ?>
   </div>
   <!--/ ADD button -->
 
@@ -28,7 +28,7 @@
               echo ' <input class="span2" type="'.$valueSearch['value'].'"id="'.$keySearch.'" name="'.$keySearch.'" value="'.$valueSearch['value'].'">';  
             }
           ?>
-          <button type="submit" class="btn"><i class="icon-search"></i> Buscar</button>
+          <button type="submit" class="btn"><i class="icon-search"></i> Search</button>
         </form> 
       </div>
     </div> 
@@ -43,7 +43,7 @@
       <?php foreach($listHead as $key => $value){ ?>
         <th width="<?php echo $value['width']?>" ><?php echo $value['title']?></th>
       <?php } ?>
-        <th class="center">Ações</th>
+        <th class="center">Actions</th>
     </tr>
   </thead>
 
@@ -95,15 +95,15 @@
       <td width="<?php echo (($showOnlyViewButton)?50:0)+(($showEditButton)?65:0)+(($showRemoveButton)?65:0)?>">
 
         <?php if($showOnlyViewButton){ ?>
-          <a class="btn btn-info btn-mini" href="<?php echo site_url($linkBase.'/view'.'/'.$valueList->$idRecordSet);?>"><i class="icon-eye-open icon-white"></i> Ver</a>          
+          <a class="btn btn-info btn-mini" href="<?php echo site_url($linkBase.'/view'.'/'.$valueList->$idRecordSet);?>"><i class="icon-eye-open icon-white"></i> View</a>          
         <?php } ?>
 
         <?php if($showEditButton){ ?>      
-          <a class="btn btn-info btn-mini" href="<?php echo site_url($linkBase.'/edit'.'/'.$valueList->$idRecordSet);?>"><i class="icon-edit icon-white"></i> Editar</a>
+          <a class="btn btn-info btn-mini" href="<?php echo site_url($linkBase.'/edit'.'/'.$valueList->$idRecordSet);?>"><i class="icon-edit icon-white"></i> Edit</a>
         <?php } ?>
 
         <?php if($showRemoveButton){ ?>
-          <a class="btn btn-danger btn-mini" data-toggle="modal" data-confirm-id="<?php echo $valueList->$idRecordSet?>" href="#ModalConfirmRemove" ><i class="icon-trash icon-white"></i> Deletar</a>
+          <a class="btn btn-danger btn-mini" data-toggle="modal" data-confirm-id="<?php echo $valueList->$idRecordSet?>" href="#ModalConfirmRemove" ><i class="icon-trash icon-white"></i> Delete</a>
         <?php } ?>
 
       </td>
@@ -118,14 +118,14 @@
 
 <?
   if(count($list) == 0){
-    echo '<div class="alert center"><strong>Nenhum registro encontrado</strong></div>';
+    echo '<div class="alert center"><strong>No records found</strong></div>';
   }
 ?>
 
 
 <div class="row">
     <?php if($perPage < count($list)){ ?>
-      <span class="label label-info pull-right">Exibindo <?php echo (1 + $countPage)?>-<?php echo ($endPage)?> de <?php echo count($list)?></span>
+      <span class="label label-info pull-right">Showing <?php echo (1 + $countPage)?>-<?php echo ($endPage)?> of <?php echo count($list)?></span>
     <?php } ?>
 </div>
 

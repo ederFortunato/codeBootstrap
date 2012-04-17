@@ -28,8 +28,8 @@ $isEdit = (isset($recordSet));
 
     <!-- Form Buttons -->
     <div class="form-actions">
-        <button type="submit" class="btn btn-primary"><i class="icon-ok icon-white"></i> Gravar</button>
-        <a href="<?php echo site_url($linkBase); ?>" class="btn btn-small"><i class="icon-remove"></i> Cancelar</a>               
+        <button type="submit" class="btn btn-primary"><i class="icon-ok icon-white"></i> OK</button>
+        <a href="<?php echo site_url($linkBase); ?>" class="btn btn-small"><i class="icon-remove"></i> Cancel</a>               
     </div>
     <!-- End Form Buttons -->
 

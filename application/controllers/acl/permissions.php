@@ -22,38 +22,38 @@ class Permissions extends MY_RestrictController {
 
 		$listHead =  array(
             'id' => array(
-                'title' =>  'Codigo',
+                'title' =>  'ID',
                 'width' =>  '',
                 'type'  =>  ''
             ),               
             'parentName' => array(
-                'title' =>  'Pai',
+                'title' =>  'Parent',
                 'width' =>  '',
                 'type'  =>  ''
             ),
             'permName' => array(
-                'title' =>  'Nome',
+                'title' =>  'Name',
                 'width' =>  '',
                 'type'  =>  ''
             ),
             'permKey' => array(
-                'title' =>  'Chave',
+                'title' =>  'Key',
                 'width' =>  '',
                 'type'  =>  ''
             ),
           	'isMenu' => array(
-                'title' =>  'Menu?',
+                'title' =>  'is Menu?',
                 'width' =>  '',
                 'type'  =>  '',
                 'labelFunction' => function($v){
-                    return ($v==0)?'Não':'Sim';
+                    return ($v==0)?'No':'Yes';
                 }
             ),          
         );  
 
  		$this->assign('listHead', 	$listHead);
  		$this->assign('list', 		$data);
-		$this->assign('title', 		'Listar Permissões');
+		$this->assign('title', 		'List Permissions');
 		$this->display('listBase');
 	}
 
@@ -63,17 +63,17 @@ class Permissions extends MY_RestrictController {
 
 		$formInfo = array( 
           	'permKey' => array(
-                'label' => 'Chave',
+                'label' => 'Key',
                 'type'  => 'text',
                 'required' => 'true'
             ),
             'permName' => array(
-                'label' => 'Nome',
+                'label' => 'Name',
                 'type'  => 'text',
                 'required' => 'true'
             ),
           	'parentID' => array(
-                'label' => 'Nó Pai',
+                'label' => 'Parent',
                 'type'  => 'combo',
                 'required' => 'true',
                 'comboAttr' => array(
@@ -84,19 +84,19 @@ class Permissions extends MY_RestrictController {
                 )              
             ),
             'order' => array(
-                'label' => 'Ordem',
+                'label' => 'Order',
                 'type'  => 'text',
                 'required' => 'true',
             ),
             'isMenu' => array(
-                'label' => 'Exibir no Menu?',
+                'label' => 'Show in the Menu?',
                 'type'  => 'checkbox',
                 'required' => 'true'
             )
 		); 
 
 		$this->assign('formInfo', 	$formInfo);
-		$this->assign('title', 		'Adicionar Permissão');
+		$this->assign('title', 		'Add Permission');
 		$this->display('formBase');
 	}
 
@@ -112,17 +112,17 @@ class Permissions extends MY_RestrictController {
                 'required' => 'true'
             ),
           	'permKey' => array(
-                'label' => 'Chave',
+                'label' => 'Key',
                 'type'  => 'text',
                 'required' => 'true'
             ),
           	'permName' => array(
-                'label' => 'Nome',
+                'label' => 'Name',
                 'type'  => 'text',
                 'required' => 'true'
             ),
             'parentID' => array(
-                'label' => 'Nó Pai',
+                'label' => 'Parent',
                 'type'  => 'combo',
                 'required' => 'true',
                 'comboAttr' => array(
@@ -133,12 +133,12 @@ class Permissions extends MY_RestrictController {
                 )              
             ), 
             'order' => array(
-                'label' => 'Ordem',
+                'label' => 'Order',
                 'type'  => 'text',
                 'required' => 'true',
             ),
             'isMenu' => array(
-                'label' => 'Exibir no Menu?',
+                'label' => 'Show in the Menu?',
                 'type'  => 'checkbox',
                 'required' => 'true'
             )
@@ -146,7 +146,7 @@ class Permissions extends MY_RestrictController {
 
 		$this->assign('formInfo', 		$formInfo);
 		$this->assign('recordSet', 		$rs[0]);
-		$this->assign('title', 'Editar Permissão: ' . $rs[0]->permName);
+		$this->assign('title', 'Edit Permission: ' . $rs[0]->permName);
 		$this->display('formBase');
 
 	}

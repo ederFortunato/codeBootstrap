@@ -62,7 +62,7 @@
             if(isset($listMenu)){
               foreach ($listMenu as $keyParent => $rowParent) {
                 if($rowParent->parentID == 0){
-                  echo '<li class="nav-header"><i class="icon-minus"></i> '.$rowParent->permName.'</li>';
+                  echo '<li class="nav-header"><i class="icon-plus"></i> '.$rowParent->permName.'</li>';
                   foreach ($listMenu as $keyChild => $rowChild) {
                     if($rowChild->parentID == $rowParent->permID){
                       echo '<li class="nav-child '.isActiveLink($rowChild->permKey).'">';
@@ -97,14 +97,14 @@
       <div id="ModalConfirmRemove" class="modal hide fade">
         <div class="modal-header">
           <a class="close" data-dismiss="modal" >&times;</a>
-          <h3>Atenção</h3>
+          <h3>Warning</h3>
         </div>
         <div class="modal-body">
-          <h4>Deseja Mesmo Fazer isso?</h4>
+          <h4>Are you sure that you wanna do this?</h4>
         </div>
         <div class="modal-footer">
-          <a href="#" class="btn" data-dismiss="modal" >Não</a>
-          <a href="#" class="btn btn-primary confirm-link" data-confirm-link="<?php echo site_url($linkBase.'/remove'); ?>" ?><i class="icon-ok icon-white"></i> Sim</a>
+          <a href="#" class="btn" data-dismiss="modal" >No</a>
+          <a href="#" class="btn btn-primary confirm-link" data-confirm-link="<?php echo site_url($linkBase.'/remove'); ?>" ?><i class="icon-ok icon-white"></i> Yes</a>
         </div>
       </div>
 

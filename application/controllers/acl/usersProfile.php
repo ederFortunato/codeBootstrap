@@ -25,17 +25,17 @@ class UsersProfile extends MY_RestrictController {
 
 		$listHead =  array(
           	'id' => array(
-                'title' =>  'Codigo',
+                'title' =>  'ID',
                 'width' =>  '32',
                 'type'  =>  ''
             ),
           	'nome' => array(
-                'title' =>  'Nome',
+                'title' =>  'Name',
                 'width' =>  '',
                 'type'  =>  ''
             ),		                  
           	'idade' => array(
-                'title' =>  'Idade',
+                'title' =>  'Age',
                 'width' =>  '50',
                 'type'  =>  ''
             )                    
@@ -43,12 +43,12 @@ class UsersProfile extends MY_RestrictController {
 
         $searchInfo = array(
             'nome' => array(
-                'title' =>  'Nome',
+                'title' =>  'Name',
                 'type'  =>  'text',
                 'value' =>  $this->getSearchParam('nome') 
             ),
             'idade' => array(
-                'title' =>  'Idade',
+                'title' =>  'Age',
                 'type'  =>  'text',
                 'value' =>  $this->getSearchParam('idade') 
             )        
@@ -57,7 +57,7 @@ class UsersProfile extends MY_RestrictController {
         $this->assign('listHead',    $listHead);
  		$this->assign('searchInfo',  $searchInfo);
  		$this->assign('list',        $data);
-		$this->assign('title',        'Listar Usuários');
+		$this->assign('title',        'List users');
 		$this->display('listBase');
 	}
 
@@ -68,12 +68,12 @@ class UsersProfile extends MY_RestrictController {
 		$formInfo = array(
 
           	'nome' => array(
-                'label' => 'Nome',
+                'label' => 'Name',
                 'type'  => 'text',
                 'required' => 'true'
             ),
           	'idade' => array(
-                'label' => 'Idade',
+                'label' => 'Age',
                 'type'  => 'text',
                 'required' => 'true'
             ),
@@ -96,7 +96,7 @@ class UsersProfile extends MY_RestrictController {
                 'required' => 'true'
             ),
             'groupID' => array(
-                'label' => 'Grupo',
+                'label' => 'Group',
                 'type'  => 'combo',
                 'required' => 'true',
                 'comboAttr' => array(
@@ -109,7 +109,7 @@ class UsersProfile extends MY_RestrictController {
 		); 
 
 		$this->assign('formInfo', 		$formInfo);
-		$this->assign('title', 'Adicionar usuário');
+		$this->assign('title', 'Add user');
 		$this->display('formBase');
 	}
 
@@ -126,12 +126,12 @@ class UsersProfile extends MY_RestrictController {
                 'required' => 'true'
             ),
             'nome' => array(
-                'label' => 'Nome',
+                'label' => 'Name',
                 'type'  => 'text',
                 'required' => 'true'
             ),
           	'idade' => array(
-                'label' => 'Idade',
+                'label' => 'Age',
                 'type'  => 'text',
                 'required' => 'true'
             ),
@@ -156,7 +156,7 @@ class UsersProfile extends MY_RestrictController {
             ),
             */            
             'groupID' => array(
-                'label' => 'Grupo',
+                'label' => 'Group',
                 'type'  => 'combo',
                 'required' => 'true',
                 'comboAttr' => array(
@@ -170,7 +170,7 @@ class UsersProfile extends MY_RestrictController {
 
 		$this->assign('formInfo', 	$formInfo);
 		$this->assign('recordSet', 	$rs[0]);
-		$this->assign('title', 'Editar usuário: ' . $rs[0]->nome);
+		$this->assign('title', 'Edit user: ' . $rs[0]->nome);
 		$this->display('formBase');
 
 	}

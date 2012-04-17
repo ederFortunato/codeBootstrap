@@ -24,12 +24,12 @@ class Groups extends MY_RestrictController {
 
 		$listHead =  array(
 			'id' => array(
-                'title' =>  'Codigo',
+                'title' =>  'ID',
                 'width' =>  '32',
                 'type'  =>  ''
             ),
           	'groupName' => array(
-                'title' =>  'Nome',
+                'title' =>  'Name',
                 'width' =>  '',
                 'type'  =>  ''
             )
@@ -38,7 +38,7 @@ class Groups extends MY_RestrictController {
  
  		$this->assign('listHead', $listHead);
  		$this->assign('list', 	  $data);
-		$this->assign('title',    'Listar Grupos');
+		$this->assign('title',    'List Groups');
 		$this->display('listBase');
 	}
 
@@ -48,12 +48,12 @@ class Groups extends MY_RestrictController {
 
 		$formInfo = array(
           	'groupName' => array(
-                'label' => 'Nome',
+                'label' => 'Name',
                 'type'  => 'text',
                 'required' => 'true'
             ),
             'group_permission' => array(
-                'label' => 'Permissões',
+                'label' => 'Permissions',
                 'type'  => 'arrayCheckbox',
                 'arrayAttr' => array(
                     'dataField'      => "id",
@@ -65,7 +65,7 @@ class Groups extends MY_RestrictController {
 		); 
 
 		$this->assign('formInfo',	$formInfo);	
-		$this->assign('title', 		'Adicionar Grupo');
+		$this->assign('title', 		'Add Group');
 		$this->display('formBase');
 	}
 
@@ -88,12 +88,12 @@ class Groups extends MY_RestrictController {
                 'required' => 'true'
             ),
           	'groupName' => array(
-                'label' => 'Nome',
+                'label' => 'Name',
                 'type'  => 'text',
                 'required' => 'true'
             ),
             'group_permission' => array(
-                'label' => 'Permissões',
+                'label' => 'Permissions',
                 'type'  => 'arrayCheckbox',
                 'arrayAttr' => array(
                     'dataField'      => "id",
@@ -106,7 +106,7 @@ class Groups extends MY_RestrictController {
 
 		$this->assign('formInfo', 	$formInfo);
 		$this->assign('recordSet', 	$rs[0]);
-		$this->assign('title', 		'Editar Grupo');
+		$this->assign('title', 		'Edit Group');
 		$this->display('formBase');
 	}
 

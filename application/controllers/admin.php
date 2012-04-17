@@ -5,7 +5,7 @@ include BASEPATH . '../application/core/MY_RestrictController.php';
 class Admin extends MY_RestrictController { 
 
 	public function index() { 
-		$this->assign('title', ' Wellcome!!!');
+		$this->assign('title', ' Welcome!!!');
 		$this->display('admin');
 	}
 }

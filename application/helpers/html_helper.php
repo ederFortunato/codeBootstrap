@@ -34,7 +34,7 @@ function htmlMountInputForm(array $options){
       $optCombo = $options['comboAttr'];
  
       $str .= '<select  id="' . $options['id'] . '" name="' . $options['id'] .'" '.$atrr.'>';
-      $str .= '<option value="">Selecione</option>';     
+      $str .= '<option value="">Select</option>';     
       foreach ($optCombo['dataProvider'] as $keyOption => $valueOption) {
         $selectCombo = ($valueOption->$optCombo['dataField'] == $optCombo['selectedValue'])?' selected="selected" ':'';
 
@@ -129,8 +129,6 @@ function generatePagination($totalItens, $perPage, $startPage, $linkBase, $getPa
   $p->target($linkBase . '?' . $urlParans);
   $p->limit($perPage);
   $p->currentPage($startPage);
-  $p->nextLabel("Proximo");
-  $p->prevLabel("Anterior");
   return $p->getOutput();
 
 }
