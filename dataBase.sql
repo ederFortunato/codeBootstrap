@@ -38,7 +38,8 @@ CREATE TABLE IF NOT EXISTS `acl_groups` (
 --
 
 INSERT INTO `acl_groups` (`id`, `groupName`) VALUES
-(1, 'Group 1');
+(1, 'Group root'),
+(2, 'Group default');
 
 -- --------------------------------------------------------
 
@@ -81,7 +82,14 @@ INSERT INTO `acl_group_permission` (`id`, `groupID`, `permID`, `value`, `addDate
 (151, 1, 46, 1, '2012-04-12 12:35:12'),
 (150, 1, 45, 1, '2012-04-12 12:35:12'),
 (149, 1, 44, 1, '2012-04-12 12:35:12'),
-(148, 1, 39, 1, '2012-04-12 12:35:12');
+(148, 1, 39, 1, '2012-04-12 12:35:12'),
+(148, 1, 66, 1, '2012-04-12 12:35:12'),
+(148, 2, 66, 1, '2012-04-12 12:35:12'),
+(148, 2, 65, 1, '2012-04-12 12:35:12'),
+(148, 2, 64, 1, '2012-04-12 12:35:12'),
+(148, 2, 63, 1, '2012-04-12 12:35:12'),
+(148, 2, 62, 1, '2012-04-12 12:35:12'),
+(148, 2, 39, 1, '2012-04-12 12:35:12');
 
 -- --------------------------------------------------------
 
@@ -107,25 +115,26 @@ CREATE TABLE IF NOT EXISTS `acl_permissions` (
 INSERT INTO `acl_permissions` (`id`, `parentID`, `permKey`, `permName`, `isMenu`, `order`) VALUES
 (39, 62, 'admin', 'Index do Admin', 1, 0),
 (44, 0, 'acl', 'Access control', 1, 5),
-(45, 44, 'acl/UsersProfile/add', 'Adicionar Usuário', 0, 0),
-(46, 44, 'acl/UsersProfile/edit', 'Editar Usuário', 0, 0),
-(47, 44, 'acl/UsersProfile/remove', 'Remover Usuário', 0, 0),
-(48, 44, 'acl/UsersProfile/save', 'Função interna', 0, 0),
-(49, 44, 'acl/usersProfile', 'Usuários', 1, 0),
-(50, 44, 'acl/permissions', 'Permissões', 1, 0),
-(51, 44, 'acl/permissions/add', 'Adicionar permissoes', 0, 0),
-(52, 44, 'acl/permissions/edit', 'Editar permissoes', 0, 0),
-(53, 44, 'acl/permissions/remove', 'Remover permissoes', 0, 0),
-(54, 44, 'acl/permissions/save', 'Função interna', 0, 0),
-(55, 44, 'acl/groups', 'Grupos', 1, 0),
-(56, 44, 'acl/groups/add', 'Adicionar grupos', 0, 0),
-(57, 44, 'acl/groups/edit', 'Editar grupos', 0, 0),
-(58, 44, 'acl/groups/remove', 'Remover grupos', 0, 0),
-(59, 44, 'acl/groups/save', 'Função interna', 0, 0),
+(45, 44, 'acl/UsersProfile/add', 'Add User', 0, 0),
+(46, 44, 'acl/UsersProfile/edit', 'Edit User', 0, 0),
+(47, 44, 'acl/UsersProfile/remove', 'Remove User', 0, 0),
+(48, 44, 'acl/UsersProfile/save', 'internal function', 0, 0),
+(49, 44, 'acl/usersProfile', 'Users', 1, 0),
+(50, 44, 'acl/permissions', 'Permissions', 1, 0),
+(51, 44, 'acl/permissions/add', 'Add permission', 0, 0),
+(52, 44, 'acl/permissions/edit', 'Edit permission', 0, 0),
+(53, 44, 'acl/permissions/remove', 'Remove permission', 0, 0),
+(54, 44, 'acl/permissions/save', 'internal function', 0, 0),
+(55, 44, 'acl/groups', 'Groups', 1, 0),
+(56, 44, 'acl/groups/add', 'Add group', 0, 0),
+(57, 44, 'acl/groups/edit', 'Edit group', 0, 0),
+(58, 44, 'acl/groups/remove', 'Remove group', 0, 0),
+(59, 44, 'acl/groups/save', 'internal function', 0, 0),
 (62, 0, 'home', 'home', 1, 0),
 (63, 0, 'auth/change_email', 'Change Email', 0, 0),
 (64, 0, 'auth/change_password', 'Change Password', 0, 0),
-(65, 0, 'auth/unregister', '  Unregister', 0, 0);
+(65, 0, 'auth/unregister', 'Unregister', 0, 0),
+(66, 0, 'auth/denial', 'Access Denial', 0, 0);
 
 -- --------------------------------------------------------
 
