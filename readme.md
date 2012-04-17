@@ -8,3 +8,4 @@ Code-Bootstrap is a basic struct build with:
 + Twitter Bootstrap (http://github.com/twitter/bootstrap)
 + The h5bp ant build script (http://github.com/h5bp/ant-build-script)
 + a few things of HTML5 Boilerplate (http://github.com/h5bp/html5-boilerplate)
++ noty (http://needim.github.com/noty)
