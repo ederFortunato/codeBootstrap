@@ -49,7 +49,7 @@ function htmlMountInputForm(array $options){
       foreach ($opArray['dataProvider'] as $keyOption => $valueOption) {
         $select  = (in_array($valueOption->$opArray['dataField'], $opArray['selectedValues']))?' checked="checked" ':'';
 
-        $str .= '<label class="checkbox">';
+        $str .= '<label class="checkbox" for="'.$options['id'].'">';
         $str .= '  <input name="'.$options['id'].'[]'.'" value="'.$valueOption->$opArray['dataField'].'"  '. $select.' type="checkbox" '.$atrr.'>';
         $str .= $valueOption->$opArray['labelField'];
         $str .= '</label>';

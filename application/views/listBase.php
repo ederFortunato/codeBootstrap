@@ -18,8 +18,8 @@
 
   <!-- search row -->
   <?php if(isset($searchInfo)){ ?>
+    <hr>
     <div class="row">
-      <hr>
       <div class="span9">
         <form class="form-inline" action="<?php echo $_SERVER['REQUEST_URI']?>" method="get" >
           <?php
@@ -36,7 +36,7 @@
 
 </div><!--/.page-header -->
 
-<table class="table table-striped table-bordered table-condensed">
+<table class="table table-striped table-bordered table-condensed" summary="List of Itens">
 
   <thead>
     <tr>
@@ -92,10 +92,10 @@
       }
     ?>   
 
-      <td width="<?php echo (($showOnlyViewButton)?50:0)+(($showEditButton)?65:0)+(($showRemoveButton)?65:0)?>">
+      <td width="<?php echo (($showOnlyViewButton)?60:0)+(($showEditButton)?57:0)+(($showRemoveButton)?57:0)?>">
 
         <?php if($showOnlyViewButton){ ?>
-          <a class="btn btn-info btn-mini" href="<?php echo site_url($linkBase.'/view'.'/'.$valueList->$idRecordSet);?>"><i class="icon-eye-open icon-white"></i> View</a>          
+          <a class="btn btn-mini" href="<?php echo site_url($linkBase.'/view'.'/'.$valueList->$idRecordSet);?>"><i class="icon-eye-open"></i> View</a>          
         <?php } ?>
 
         <?php if($showEditButton){ ?>      
