@@ -56,7 +56,7 @@
     <script>window.jQuery || document.write('<script src="assets/js/jquery/jquery.js"><\/script>')</script>
 
     <!-- scripts concatenated and minified via build script -->
-    <script src="assets/js/bootstrap/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap/bootstrap-collapse.min.js"></script>
     <script src="assets/js/script_site.js"></script>
     <!-- end scripts -->
 

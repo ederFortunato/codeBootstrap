@@ -113,18 +113,17 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="assets/js/jquery/jquery.js"><\/script>')</script>
     
-    <!-- scripts concatenated and minified via build script -->    
- 
     <!-- scripts concatenated and minified via build script -->
-    <script src="assets/js/jquery/jquery.js"></script>
-    <script src="assets/js/jquery/jquery.noty.js"></script>
-    <script src="assets/js/bootstrap/bootstrap-collapse.js"></script>
-    <script src="assets/js/bootstrap/bootstrap-alert.js"></script>
-    <script src="assets/js/bootstrap/bootstrap-modal.js"></script>
-    <script src="assets/js/bootstrap/bootstrap-transition.js"></script>
-    <script src="assets/js/bootstrap/bootstrap-dropdown.js"></script>
+    <script src="assets/js/jquery/jquery.noty.js"></script>   
+    <script src="assets/js/jquery/jquery.formalize.js"></script>
+    <script src="assets/js/bootstrap/bootstrap-modal.min.js"></script>
+    <script src="assets/js/bootstrap/bootstrap-collapse.min.js"></script>
+    <script src="assets/js/bootstrap/bootstrap-alert.min.js"></script>
+    <script src="assets/js/bootstrap/bootstrap-transition.min.js"></script>
+    <script src="assets/js/bootstrap/bootstrap-dropdown.min.js"></script>     
     <script src="assets/js/script.js"></script>
     <!-- end scripts -->
+   
     
   </body>
 </html>
