@@ -16,5 +16,5 @@ Code-Bootstrap is a basic struct build with:
 ## How
 
 + create a database **projectbase**
-+ execute the file dataBase.sql in your base
++ execute the file **dataBase.sql** in your base
 + the root user can be access with login **root@root.com** and password **123456**
